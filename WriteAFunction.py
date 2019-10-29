@@ -8,3 +8,6 @@ def is_leap(year):
         if year % 100 == 0 and year % 400 != 0:
             leap = False
     return leap
+
+year = int(raw_input())
+print is_leap(year)
