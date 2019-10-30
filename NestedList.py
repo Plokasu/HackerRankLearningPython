@@ -8,18 +8,19 @@ if __name__ == '__main__':
         name = input()
         score = float(input())
         arr.append([name, score])
+
     arr.sort(key=sortScore)
     
     minScore = min(x[1] for x in arr)
     
     list2 = []
 
-    for n in range(0, len(arr)):
-        if arr[n][1] != minScore:
-            list2.append(arr[n])    
+    for n in arr:
+        if n[1] == minScore:
+            arr.remove(n)
 
-    minScore = min(x[1] for x in list2)
+    minScore = min(x[1] for x in arr)
 
-    for n in range(0, len(list2)): 
-        if list2[n][1] == minScore:
-            print(list2[n][0])
+    for n in arr: 
+        if n[1] == minScore:
+            print(n[0])
